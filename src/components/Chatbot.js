@@ -16,7 +16,7 @@ const Chatbot = () => {
     setInput('');
 
     try {
-      const response = await axios.post('https://labsserver-ezk40tict-michael-lynns-projects.vercel.app/api/chat', { query: input });
+      const response = await axios.post('labsserver-h44uo66ja-michael-lynns-projects.vercel.app/api/chat', { query: input });
       const reply = response.data.reply;
       setMessages([...newMessages, { text: reply, isUser: false }]);
     } catch (error) {
