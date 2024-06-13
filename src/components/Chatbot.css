@@ -1,61 +1,132 @@
+/* Chatbot.css */
 .chatbot {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  
-  .chat-messages {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto;
-    background-color: #f9f9f9; /* Light grey background for messages */
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .chat-message {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    line-height: 1.4;
-  }
-  
-  .user-message {
-    background-color: #589636;
-    color: #fff;
-    align-self: flex-end;
-  }
-  
-  .bot-message {
-    background-color: #e9ecef;
-    color: #000;
-    align-self: flex-start;
-  }
-  
-  .chat-input {
-    display: flex;
-    padding: 10px;
-    background-color: #fff;
-    border-top: 1px solid #ddd;
-  }
-  
-  .chat-input input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 10px;
-  }
-  
-  .chat-input button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #589636;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .chat-input button:hover {
-    background-color: #589636;
-  }
-  
+  display: flex;
+  height: 100vh; /* Full height of the viewport */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 15px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.sidebar-item {
+  margin-bottom: 10px;
+}
+
+.sidebar-item a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.sidebar-item a:hover {
+  text-decoration: underline;
+}
+
+.chat-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  height: 100vh;
+  position: relative; /* Ensure child elements with absolute position are relative to this container */
+  overflow: hidden; /* Hide overflow if necessary */
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 60vh; /* Adjust this value to fit your design */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+  overflow-anchor: auto; /* Maintain scroll position at the bottom */
+}
+
+.chat-message {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  max-width: 75%;
+  align-self: right;
+}
+
+.user-message {
+  background-color: #d1ffd1;
+  align-self: flex-end;
+  text-align: right;
+  margin-left: auto; /* Push the user message to the right */
+}
+
+.bot-message {
+  background-color: #d1e0ff;
+  align-self: flex-start;
+  text-align: left;
+  margin-right: auto; /* Push the bot message to the left */
+}
+
+.chat-input {
+  display: flex;
+  padding: 15px;
+  background-color: #f4f4f4;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  position: absolute; /* Change to absolute */
+  bottom: 0; /* Position at the bottom */
+  width: 100%; /* Ensure it takes full width */
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #199336;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: #199336;
+}
+.example-questions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.example-questions a {
+  flex: 0 0 33%;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: #007bff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-right: 5px;
+}
+
+.example-questions a:last-child {
+  margin-right: 0; /* Remove right margin for the last item */
+}
+
+.example-questions a:hover {
+  background-color: #f8f9fa;
+}

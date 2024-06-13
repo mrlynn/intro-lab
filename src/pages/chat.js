@@ -1,6 +1,7 @@
+// ChatPage.js
 import React from 'react';
 import Layout from '@theme/Layout';
-import Chatbot from '../components/Chatbot.js';
+import Chatbot from '../components/Chatbot';
 import './ChatPage.css';
 
 const ChatPage = () => (
